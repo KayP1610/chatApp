@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat - Messages</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">Chat</div>
+    <div class="nav-search">
+      <input type="text" placeholder="Search Chat" />
+    </div>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="friends.html">Friends</a>
+      <a href="message.html">Messages</a>
+      <a href="notifications.html">Notifications</a>
+      <a href="profile.html">Profile</a>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <div class="feed">
+      <h2>Messages</h2>
+
+      <!-- Chat preview that links to a private chatroom -->
+      <div class="message" onclick="enterChatRoom('john')">
+        <strong>John:</strong> Hey! What’s up?
+      </div>
+      <div class="message" onclick="enterChatRoom('john')">
+        <strong>You:</strong> All good! Working on a new project.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function enterChatRoom(friendUsername) {
+      // Go to chatroom.html and pass the friend's username in the URL
+      window.location.href = `chatroom.html?user=${friendUsername}`;
+    }
+  </script>
+</body>
+</html>

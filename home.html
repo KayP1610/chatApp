@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat - Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">Chat</div>
+    <div class="nav-search">
+      <input type="text" placeholder="Search Chat" />
+    </div>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="friends.html">Friends</a>
+      <a href="message.html">Messages</a>
+      <a href="notifications.html">Notifications</a>
+      <a href="profile.html">Profile</a>
+    </div>
+  </nav>
+
+  <!-- Main Layout -->
+  <div class="main-content">
+    <!-- Left Sidebar -->
+    <div class="sidebar">
+      <h3>Shortcuts</h3>
+      <ul>
+        <li><a href="#">Your Groups</a></li>
+        <li><a href="#">Saved</a></li>
+        <li><a href="#">Events</a></li>
+      </ul>
+    </div>
+
+    <!-- Feed Section -->
+    <div class="feed">
+      <!-- Create Post -->
+      <div class="create-post">
+        <textarea placeholder="What's on your mind?"></textarea>
+        <button>Post</button>
+      </div>
+
+      <!-- Post Example -->
+      <div class="post">
+        <div class="post-header">
+          <strong>John Doe</strong> • <span>2 hrs ago</span>
+        </div>
+        <div class="post-body">
+          Just launched my new project! Feeling excited!
+        </div>
+      </div>
+
+      <!-- Another Post -->
+      <div class="post">
+        <div class="post-header">
+          <strong>Jane Smith</strong> • <span>4 hrs ago</span>
+        </div>
+        <div class="post-body">
+          Enjoying a beautiful day outside!
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="sidebar right">
+      <h3>Contacts</h3>
+      <ul>
+        <li>John</li>
+        <li>Mary</li>
+        <li>Alex</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Private Chat Room</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation bar (same as other pages) -->
+  <nav class="navbar">
+    <div class="nav-logo">Chat</div>
+    <div class="nav-search">
+      <input type="text" placeholder="Search Chat" />
+    </div>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="friends.html">Friends</a>
+      <a href="message.html">Messages</a>
+      <a href="notifications.html">Notifications</a>
+      <a href="profile.html">Profile</a>
+    </div>
+  </nav>
+
+  <!-- Main content area -->
+  <div class="app-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h3>Contacts</h3>
+      <ul>
+        <li><a href="#">Friend 1</a></li>
+        <li><a href="#">Friend 2</a></li>
+        <li><a href="#">Friend 3</a></li>
+        <li><a href="#">Friend 4</a></li>
+        <li><a href="#">Friend 5</a></li>
+      </ul>
+    </div>
+
+    <!-- Chat Container -->
+    <div class="chat-container">
+      <div id="chat-header">Chatting with ...</div>
+      <div class="chat-box" id="chat-box">
+        <!-- Messages will appear here -->
+      </div>
+
+      <!-- Chat input form -->
+      <form class="chat-input" id="chat-form">
+        <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Chat functionality script -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const friendUsername = urlParams.get('user') || 'Unknown';
+    document.getElementById('chat-header').textContent = `Chatting with ${friendUsername}`;
+
+    const chatBox = document.getElementById('chat-box');
+    const messageInput = document.getElementById('message-input');
+    const chatForm = document.getElementById('chat-form');
+
+    chatForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      sendMessage();
+    });
+
+    function sendMessage() {
+      const message = messageInput.value.trim();
+      if (message !== '') {
+        const msgDiv = document.createElement('div');
+        msgDiv.classList.add('message', 'you');
+        msgDiv.textContent = message;
+        chatBox.appendChild(msgDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+        messageInput.value = '';
+      }
+    }
+  </script>
+</body>
+</html>
